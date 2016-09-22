@@ -17,7 +17,6 @@ __metaclass__ = PoolMeta
 class PriceListLine():
     'Price List Line'
     __name__ = 'product.price_list.line'
-
     percentage = fields.Numeric('Porcentaje de descuento')
 
     @classmethod
@@ -33,6 +32,10 @@ class PriceListLine():
             if self.percentage > 0:
                 percentage = self.percentage/100
                 p = str(percentage)
-            formula = 'unit_price * (1 - ' +p+')'
-            res['formula'] = formula
+                formula = 'unit_price * (1 - ' +p+')'
+                res['formula'] = formula
+            else:
+                res['formula'] = ""
+        else:
+            res['formula'] = ""
         return res
