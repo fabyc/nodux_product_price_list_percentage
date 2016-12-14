@@ -17,7 +17,7 @@ __metaclass__ = PoolMeta
 class PriceListLine():
     'Price List Line'
     __name__ = 'product.price_list.line'
-    percentage = fields.Numeric('Porcentaje de descuento')
+    percentage = fields.Numeric('Porcentaje')
 
     @classmethod
     def __setup__(cls):
